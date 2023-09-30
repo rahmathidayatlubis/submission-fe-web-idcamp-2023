@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookshelf Apps</title>
+  <link rel="icon" href="assets/img/book_icon.png" sizes="48x48" type="image/png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="head_bar">
+    <h1 class="head_bar__title">Bookshelf Apps</h1>
+  </header>
+  <main>
+    <section class="input_section">
+      <div class="damn">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook" action="#">
+          <div class="form-container">
+            <label for="inputBookTitle" class="form-label">Judul</label>
+            <input id="inputBookTitle" type="text" autocomplete="off" class="form-input" required>
+          </div>
+          <div class="form-container">
+            <label for="inputBookAuthor" class="form-label">Penulis</label>
+            <input id="inputBookAuthor" type="text" class="form-input" required>
+          </div>
+          <div class="form-container">
+            <label for="inputBookYear" class="form-label">Tahun</label>
+            <input id="inputBookYear" type="number" class="form-input" oninput="validateInput(this)" required>
+          </div>
+          <div class="form-container">
+            <input id="inputBookIsComplete" type="checkbox" class="form-checkbox">
+            <label for="inputBookIsComplete" class="form-checkbox-label">Selesai dibaca</label>
+          </div>
+          <div class="form-container">
+            <button id="bookSubmit" type="submit" class="form-button">Masukkan Buku ke rak <span id="statusBuku">Belum
+                Selesai dibaca</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="search_input">
+      <div class="search">
+        <input type="text" id="searchInput" class="form-input" placeholder="Cari...">
+      </div>
+    </section>
+    <section class="rak-buku">
+      <div class="book_shelf">
+        <h2>Belum selesai dibaca</h2>
+
+        <div id="incompleteBookshelfList" class="book_list"></div>
+      </div>
+
+      <div class="book_shelf">
+        <h2>Selesai dibaca</h2>
+
+        <div id="completeBookshelfList" class="book_list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
